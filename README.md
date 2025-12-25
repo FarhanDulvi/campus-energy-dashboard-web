@@ -1,73 +1,74 @@
-# React + TypeScript + Vite
+# Campus Energy Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Problem Statement:
+University campuses are massive consumers of energy, often operating inefficiently due to a lack of granular, real-time data. Students and facility managers lack visibility into specific block usage, leading to unchecked waste, high costs, and a significant carbon footprint. Without clear data, it is impossible to identify leaks, spikes, or inefficient behaviors.
 
-Currently, two official plugins are available:
+## Solution:
+We realized that to truly reduce energy consumption, we needed to make energy data visible, understandable, and actionable. We needed a tool that not only reports numbers but also identifies anomalies and visualizes the environmental impact in a way that resonates with the community.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Campus Energy Dashboard** is our answer. We’ve designed a platform that turns raw inputs into meaningful insights. By providing a clean, modern interface with immediate feedback on costs, carbon emissions, and efficiency rankings, we empower the campus community to make smarter, more sustainable decisions.
 
-## React Compiler
+## What it does
+The Campus Energy Dashboard converts static energy meter readings into a dynamic intelligence hub. It allows users to input daily usage data and instantly visualize the performance of different campus blocks (Lecture Halls, Labs, Hostels, etc.). It features **Smart Anomaly Detection** to flag unusual spikes, a **Sustainability Report** that translates kWh into trees required for carbon offsetting, and a **Cost Simulator** based on tiered pricing models. It serves as a central nervous system for campus energy management.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## How we built it
+The dashboard is built using modern web standards to ensure performance, responsiveness, and maintainability.
 
-## Expanding the ESLint configuration
+**a) Frontend:**
+- Powered by **Vite** and **React 19** for a lightning-fast, reactive user experience.
+- **Tailwind CSS** provides a custom, utility-first design system featuring an eco-friendly Emerald/Teal color palette.
+- **React Three Fiber (@react-three/fiber)** & **Drei** are used to render the immersive "Neural Network" hero visualization in the demo section.
+- **GSAP (GreenSock)** powers high-performance animations for the interactive elements.
+- **Lucide React** provides clean, consistent iconography.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+**b) Logic & Core:**
+- Written entirely in **TypeScript** for robust type safety and reliability.
+- The core analytical engine (ported and enhanced from C) runs client-side, performing real-time scaling of data, CO2 calculations, and predictive forecasting without server latency.
+- Custom **React Hooks** (`useEnergyData`) manage the complex state of energy readings, alerts, and rankings.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+**c) Development Tools:**
+- **VS Code** with **ESLint** and **Prettier** ensured code quality and consistency.
+- **GitHub** for version control and collaboration.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Challenges we ran into
+a) **Porting Legacy Logic:** Translating the original C-based procedural logic into a reactive, state-driven React paradigm required careful restructuring of how data flows through the application.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+b) **Advanced 3D Integration:** Integrating the custom shader-based "Neural Network" background (using Three.js) while maintaining high frame rates and ensuring it didn't distract from the core dashboard data was a fine balancing act.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+c) **Anomaly Detection Tuning:** Defining what constitutes an "anomaly" required fine-tuning the algorithms to distinguish between normal peak usage and actual efficiency issues (set to >40% of average).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Accomplishments that we're proud of
+a) **Smart Insights:** We went beyond simple charts to implement "Smart Alerts" that actually detect and flag anomalies, adding real intelligence to the system.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+b) **Visual Excellence:** The UI achieves a balance between "Academic Elegance" and modern tech, using glassmorphism and smooth transitions to make energy data look beautiful.
+
+c) **Sustainability Focus:** We successfully integrated environmental metrics (CO2 & Trees), making the abstract concept of "kilowatt-hours" tangible and relatable.
+
+d) **Seamless Demo Integration:** We successfully merged a high-end 3D generative art demo with a functional utility dashboard in a single cohesive app.
+
+## What we learned
+a) **State Management Complexity:** Managing dependent states (input data -> affecting averages -> affecting rankings -> affecting alerts) taught us the power of React's `useMemo` for derived state performance.
+
+b) **The Power of Feedback:** We learned that showing users the *cost* and *environmental impact* of their usage is a far more powerful motivator than just showing raw numbers.
+
+c) **TypeScript Benefits:** Strict typing saved us countless hours by preventing data structure mismatches between our calculation engine and the UI components.
+
+## What's next for Campus Energy Dashboard
+a) **IoT Integration:** Connecting directly to smart meters for automated, second-by-second data ingestion.
+
+b) **Gamification:** Implementing a "Green Points" system where blocks compete weekly to reduce their carbon footprint.
+
+c) **Predictive AI:** Replacing the simple linear forecast with a Machine Learning model that accounts for weather, holidays, and class schedules.
+
+d) **Mobile App:** wrapping the responsive web design into a native wrapper for push notifications on alerts.
+
+## Built With
+react
+vite
+typescript
+tailwindcss
+three.js
+react-three-fiber
+gsap
+lucide-react
+eslint
