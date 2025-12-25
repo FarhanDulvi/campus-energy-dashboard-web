@@ -1,4 +1,5 @@
 # Campus Energy Dashboard
+https://campus-energy-dashboard.vercel.app/
 
 ## Problem Statement:
 University campuses are massive consumers of energy, often operating inefficiently due to a lack of granular, real-time data. Students and facility managers lack visibility into specific block usage, leading to unchecked waste, high costs, and a significant carbon footprint. Without clear data, it is impossible to identify leaks, spikes, or inefficient behaviors.
