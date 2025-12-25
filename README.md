@@ -11,7 +11,7 @@ We realized that to truly reduce energy consumption, we needed to make energy da
 ## What it does
 The Campus Energy Dashboard converts static energy meter readings into a dynamic intelligence hub. It allows users to input daily usage data and instantly visualize the performance of different campus blocks (Lecture Halls, Labs, Hostels, etc.). It features **Smart Anomaly Detection** to flag unusual spikes, a **Sustainability Report** that translates kWh into trees required for carbon offsetting, and a **Cost Simulator** based on tiered pricing models. It serves as a central nervous system for campus energy management.
 
-## How we built it
+## How I built it
 The dashboard is built using modern web standards to ensure performance, responsiveness, and maintainability.
 
 **a) Frontend:**
@@ -30,14 +30,14 @@ The dashboard is built using modern web standards to ensure performance, respons
 - **VS Code** with **ESLint** and **Prettier** ensured code quality and consistency.
 - **GitHub** for version control and collaboration.
 
-## Challenges we ran into
+## Challenges I ran into
 a) **Porting Legacy Logic:** Translating the original C-based procedural logic into a reactive, state-driven React paradigm required careful restructuring of how data flows through the application.
 
 b) **Advanced 3D Integration:** Integrating the custom shader-based "Neural Network" background (using Three.js) while maintaining high frame rates and ensuring it didn't distract from the core dashboard data was a fine balancing act.
 
 c) **Anomaly Detection Tuning:** Defining what constitutes an "anomaly" required fine-tuning the algorithms to distinguish between normal peak usage and actual efficiency issues (set to >40% of average).
 
-## Accomplishments that we're proud of
+## Accomplishments that I'm proud of
 a) **Smart Insights:** We went beyond simple charts to implement "Smart Alerts" that actually detect and flag anomalies, adding real intelligence to the system.
 
 b) **Visual Excellence:** The UI achieves a balance between "Academic Elegance" and modern tech, using glassmorphism and smooth transitions to make energy data look beautiful.
@@ -46,7 +46,7 @@ c) **Sustainability Focus:** We successfully integrated environmental metrics (C
 
 d) **Seamless Demo Integration:** We successfully merged a high-end 3D generative art demo with a functional utility dashboard in a single cohesive app.
 
-## What we learned
+## What I learned
 a) **State Management Complexity:** Managing dependent states (input data -> affecting averages -> affecting rankings -> affecting alerts) taught us the power of React's `useMemo` for derived state performance.
 
 b) **The Power of Feedback:** We learned that showing users the *cost* and *environmental impact* of their usage is a far more powerful motivator than just showing raw numbers.
